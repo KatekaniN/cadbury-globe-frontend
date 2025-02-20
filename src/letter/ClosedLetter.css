@@ -10,12 +10,12 @@
 
 @font-face {
   font-family: "Comic";
-  src: url('comic.ttf');
+  src: url("/cadbury-globe-frontend/public/fonts/comic.ttf");
 }
 
 @font-face {
   font-family: "DeerSnow";
-  src: url("DeerSnow.ttf");
+  src: url("/cadbury-globe-frontend/public/fonts/DeerSnow.ttf");
 }
 
 .container-letter {
@@ -86,7 +86,7 @@
   transform: translateY(100%) rotateX(50deg);
   opacity: 0;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
 }
 
@@ -98,12 +98,12 @@
 }
 
 .text-letter {
-  width: 100%; 
+  width: 100%;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding: 5px; 
-  }
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
 
 .heart-letter {
   z-index: 30;
@@ -170,7 +170,7 @@
   transform: rotate(-45deg); /* Changed rotation */
   cursor: pointer;
   animation: beat 1.5s infinite alternate;
-  }
+}
 
 .heart-button-letter::before,
 .heart-button-letter::after {
