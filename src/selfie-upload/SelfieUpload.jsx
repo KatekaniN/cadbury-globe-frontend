@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Snowfall from "react-snowfall";
 import "./SelfieUpload.css";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const MoodDetector = () => {
   const [selectedImage, setSelectedImage] = useState(null);
