@@ -33,7 +33,6 @@ const MoodDetector = () => {
     const file = e.target.files[0];
     if (file) {
       setSelectedImage(file);
-      // Create preview URL for the image
       setImagePreview(URL.createObjectURL(file));
     }
   };
@@ -51,7 +50,7 @@ const MoodDetector = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/detect-mood`,
+        `${import.meta.env.VITE_BACKEND_URL}/detect-mood`,
         formData,
         {
           headers: {
