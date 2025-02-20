@@ -12,7 +12,7 @@
 
 @font-face {
 font-family: 'DeerSnow';
-src: url('DeerSnow.ttf');
+src: url('/cadbury-globe-frontend/public/fonts/DeerSnow.ttf');
 }
 
 html, body {
