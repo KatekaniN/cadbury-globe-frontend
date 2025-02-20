@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "DeerSnow";
-  src: url("/cadbury-globe-frontend/public/fonts/DeerSnow.ttf");
+  src: url("/fonts/DeerSnow.ttf") format("truetype");
 }
 
 html,
@@ -306,7 +306,7 @@ body {
 }
 
 .globe-container-gift {
-  left:30%;
+  left: 30%;
   position: relative;
   width: 400px;
   height: 500px;
@@ -314,7 +314,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .globe-gift {
   position: absolute;
@@ -334,22 +334,21 @@ body {
 
 .snowman {
   position: absolute;
-  width: 110%; 
+  width: 110%;
   height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  object-fit: contain; 
-  z-index: 1; 
-  }
-
-.globe-container-gift .globe-base-gift {
-animation: shake 1s ease infinite;
+  object-fit: contain;
+  z-index: 1;
 }
 
+.globe-container-gift .globe-base-gift {
+  animation: shake 1s ease infinite;
+}
 
-.globe-container-gift, .globe-gift
-{
+.globe-container-gift,
+.globe-gift {
   animation: shake 3s ease-in-out infinite;
 }
 .snow-container-gift {
@@ -407,18 +406,40 @@ animation: shake 1s ease infinite;
 }
 
 @keyframes shake {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(-2deg); }
-  20% { transform: rotate(2deg); }
-  30% { transform: rotate(0deg); }
-  40% { transform: rotate(2deg); }
-  50% { transform: rotate(-2deg); }
-  60% { transform: rotate(0deg); }
-  70% { transform: rotate(-2deg); }
-  80% { transform: rotate(2deg); }
-  90% { transform: rotate(0deg); }
-  100% { transform: rotate(-2deg); }
+  0% {
+    transform: rotate(0deg);
   }
+  10% {
+    transform: rotate(-2deg);
+  }
+  20% {
+    transform: rotate(2deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
 
 @media (max-width: 968px) {
   .results-content {
@@ -463,9 +484,9 @@ animation: shake 1s ease infinite;
 }
 
 .globe-inner {
-  width: 80%; 
+  width: 80%;
   height: auto;
-  position: absolute; 
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

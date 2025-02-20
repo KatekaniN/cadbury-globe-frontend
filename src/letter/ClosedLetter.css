@@ -10,12 +10,12 @@
 
 @font-face {
   font-family: "Comic";
-  src: url("/cadbury-globe-frontend/public/fonts/comic.ttf");
+  src: url("/fonts/comic.ttf") format("truetype") ;
 }
 
 @font-face {
   font-family: "DeerSnow";
-  src: url("/cadbury-globe-frontend/public/fonts/DeerSnow.ttf");
+  src: url("/fonts/DeerSnow.ttf") format("truetype") ;
 }
 
 .container-letter {
