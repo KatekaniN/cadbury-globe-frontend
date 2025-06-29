@@ -272,7 +272,7 @@ button.submit-button-selfie {
   animation: textGlow 2s ease-in-out infinite alternate;
   position: absolute;
   bottom: 100px;
-  top: 280px;
+  top: 4.5em;
   left: 50%;
   transform: translateX(-50%);
   font-family: "Tangerine", cursive;
@@ -328,7 +328,6 @@ button.submit-button-selfie {
   position: relative;
   transition: all 0.3s;
   cursor: pointer;
-
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -460,7 +459,7 @@ button.submit-button-selfie {
   position: absolute;
   margin-top: 70px;
   width: 60%;
-  margin-left: -250px;
+  margin-left: -15em;
   background: linear-gradient(145deg, #451e7c, #371b5f);
   border: 0.25em solid #b9a7d3;
   color: #ffffff;

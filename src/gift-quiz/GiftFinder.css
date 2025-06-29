@@ -91,7 +91,7 @@ body {
 }
 
 .scroll-content {
-  bottom: 9em;
+  bottom: 14em;
   right: 30em;
   background: linear-gradient(to bottom, #f4e4bc 0%, #e7d5b0 100%);
   border-radius: 10px;
@@ -153,6 +153,7 @@ body {
   background: linear-gradient(145deg, #451e7c, #371b5f);
   border-radius: 20px;
   padding: 40px;
+  bottom: 5em;
   width: 80%;
   max-width: 600px;
   box-shadow: 0 0 30px rgba(69, 30, 124, 0.3),
@@ -270,7 +271,7 @@ body {
 
 .gift-box {
   flex: 1;
-  max-width: 400px;
+  max-width: 25em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -318,7 +319,7 @@ body {
 
 .globe-gift {
   position: absolute;
-  top: 0.5em;
+  top: -5em;
   gap: 0px;
   left: 76%; /* 220px*/
   transform: translateX(-50%);
@@ -387,7 +388,7 @@ body {
 .globe-base-gift {
   position: absolute;
   width: 80%;
-  bottom: 160px;
+  bottom: 15.7em;
   left: 228px;
   transform: translateX(-50%);
   z-index: 10;
