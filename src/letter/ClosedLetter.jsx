@@ -18,7 +18,7 @@ const Letter = () => {
         <div className="envelope-letter">
           <div className="letter">
             <div className="text-letter">
-              <h3 className="letter-h3"> 🎄✨ A Magical Invitation Awaits… ✨🎄</h3>
+              <h3 className="letter-h3">A Cadbury Adventure Awaits ✨🎄</h3>
               <p>
                 Ah, dear adventurer, you’ve stumbled upon something truly
                 special — but it’s not quite what it used to be. <br />

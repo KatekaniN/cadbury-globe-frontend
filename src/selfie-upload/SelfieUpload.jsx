@@ -22,7 +22,7 @@ const MoodDetector = () => {
     } else if (detectedMood.toLowerCase() !== "joy") {
       return "The gates remain sealed tight and true, Until joy's light comes shining through. Share a smile, bright and new, For only happiness will let you through.";
     } else {
-      return "Wonderful! Your joyful spirit has unlocked the magical path forward. Click 'Share the Magic' to spread your festive cheer!";
+      return "Wonderful! Your joyful spirit has unlocked the magical path forward. Now you can 'Share the Magic' to spread your festive cheer!";
     }
   };
 

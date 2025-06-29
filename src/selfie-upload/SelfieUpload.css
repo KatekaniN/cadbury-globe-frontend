@@ -60,7 +60,7 @@ button.submit-button-selfie {
 }
 
 .logo-elements-selfie {
-  margin-left: -500px;
+  margin-left: -22em;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
@@ -73,7 +73,7 @@ button.submit-button-selfie {
   color: var(--primary);
   font-size: 1.5em;
   margin-top: 120px;
-  margin-left: 1em;
+  margin-left: 0em;
 }
 
 .logo-selfie {
@@ -111,11 +111,11 @@ button.submit-button-selfie {
 }
 
 .magical-scroll-selfie {
-  top: 150px;
-  left: -450px;
+  top: 9.5em;
+  left: -25em;
   transform: translateY(-50%);
   width: 300px;
-  height: 350px;
+  height: 305px;
   background: linear-gradient(to bottom, #f4e4bc 0%, #e7d5b0 100%);
   border-radius: 10px;
   padding: 30px;
@@ -193,8 +193,8 @@ button.submit-button-selfie {
 }
 
 .snow-globe-container-selfie {
-  width: 420px;
-  height: 420px;
+  width: 22em;
+  height: 22em;
   position: relative;
   perspective: 1000px;
   top: -350px;
@@ -213,7 +213,7 @@ button.submit-button-selfie {
 }
 
 .snow-globe-selfie {
-  top: -138px;
+  top: -8.7em;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -234,11 +234,11 @@ button.submit-button-selfie {
 
 .snow-globe-base {
   position: absolute;
-  bottom: -18px;
+  bottom: -0em;
   left: 50.5%;
   transform: translateX(-50%);
-  width: 400px;
-  height: 250px;
+  width: 22em;
+  height: 14em;
   z-index: 3;
 }
 
@@ -261,11 +261,11 @@ button.submit-button-selfie {
 .upload-section-wrapper {
   position: relative;
   bottom: 700px;
-  left: 600px;
+  left: 29em;
 }
 
 .file-input-selfie {
-  width: 300px;
+  width: 19em;
 }
 
 .mood-result {

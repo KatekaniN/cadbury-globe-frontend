@@ -10,23 +10,24 @@
 
 @font-face {
   font-family: "Comic";
-  src: url("/fonts/comic.ttf") format("truetype") ;
+  src: url("/fonts/comic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "DeerSnow";
-  src: url("/fonts/DeerSnow.ttf") format("truetype") ;
+  src: url("/fonts/DeerSnow.ttf") format("truetype");
 }
 
 .container-letter {
   display: grid;
+  margin-left: 20em;
   place-items: center;
 }
 
 .envelope-wrapper-letter {
   /* rotate: 1 1 1 -80deg;   lying down*/
   right: 380px;
-  top: 75%;
+  top: 35%;
   z-index: 20;
   position: relative;
   width: 280px;
@@ -39,7 +40,8 @@
 }
 
 .envelope-letter {
-  position: relative;
+  position: absolute;
+  margin-left: 0em;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
@@ -73,8 +75,8 @@
 .letter {
   z-index: 20;
   position: absolute;
-  right: 18%;
-  bottom: -50px;
+  right: -6%;
+  bottom: -8em; 
   width: 62%;
   height: 180%;
   background: var(--heart-color);
@@ -83,12 +85,13 @@
   box-shadow: 0 0 5px var(--envelope-cover);
   padding: 20px 10px;
   transform-origin: bottom;
-  transform: translateY(100%) rotateX(50deg);
+  transform: translateY(60%) rotateX(50deg); 
   opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .letter > .text-letter {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -167,7 +170,7 @@
   width: 25px;
   height: 25px;
   background-color: #bc924a;
-  transform: rotate(-45deg); /* Changed rotation */
+  transform: rotate(-45deg); 
   cursor: pointer;
   animation: beat 1.5s infinite alternate;
 }
