@@ -45,7 +45,7 @@ body {
   position: relative;
   font-family: "DeerSnow";
   color: var(--primary);
-  font-size: 1em;
+  font-size: 1.5em;
   margin-top: 0px;
   margin-left: 12em;
 }
@@ -97,7 +97,7 @@ h3 {
   font-family: "DeerSnow", sans-serif;
   color: var(--cadbury-gold);
   margin-top: 0px;
-  margin-left: 12em;
+  margin-left: 2em;
 }
 
 h3 {
@@ -107,8 +107,7 @@ h3 {
 }
 
 .logo-elements-recommendation h1 {
-  font-size: 2.5em;
-  margin-right: 420px;
+  margin-right: 20em;
 }
 
 .recommendation-card {
