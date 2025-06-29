@@ -97,7 +97,7 @@ h3 {
   font-family: "DeerSnow", sans-serif;
   color: var(--cadbury-gold);
   margin-top: 0px;
-  margin-left: 2em;
+  margin-left: 19em;
 }
 
 h3 {
@@ -106,16 +106,12 @@ h3 {
   font-size: 0.8em;
 }
 
-.logo-elements-recommendation h1 {
-  margin-right: 20em;
-}
-
 .recommendation-card {
   position: relative;
   background: var(--cadbury-cream);
   border-radius: 20px;
-  margin-top: 50px;
-  margin-left: 350px;
+  margin-top: -1em;
+  margin-left: 19em;
   width: 80%;
   max-width: 650px;
   min-height: fit-content;
