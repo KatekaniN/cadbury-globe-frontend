@@ -29,7 +29,6 @@ const Letter = () => {
                 the next clue.
               </p>
 
-  
               {isOpen && (
                 <motion.div
                   className="heart-button-letter"
