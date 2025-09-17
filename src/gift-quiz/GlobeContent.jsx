@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 const GlobeContent = ({ joyImagePath }) => {
   return (
     <div
@@ -24,8 +22,4 @@ const GlobeContent = ({ joyImagePath }) => {
     </div>
   );
 };
-GlobeContent.propTypes = {
-  joyImagePath: PropTypes.string
-}
-
 export default GlobeContent;

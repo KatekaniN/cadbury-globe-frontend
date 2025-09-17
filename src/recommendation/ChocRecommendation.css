@@ -14,19 +14,16 @@
 @font-face {
   font-family: "DeerSnow";
   src: url("/fonts/DeerSnow.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Playwrite";
   src: url("/fonts/Playwrite.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Comic";
   src: url("/fonts/comic.ttf") format("truetype");
-  font-display: swap;
 }
 html,
 body {

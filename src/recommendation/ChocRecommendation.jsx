@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Snowfall from "react-snowfall";
 import { motion } from "framer-motion";
 import "./ChocRecommendation.css";
@@ -12,7 +12,10 @@ import {
 } from "react-share";
 
 const ChocRecommendation = () => {
-  const [snowAmount] = useState(100);
+  const [snowflakeCount, setSnowflakeCount] = useState(100);
+  const [snowAmount, setSnowAmount] = useState(100);
+  const [snowflakeRadius, setSnowflakeRadius] = useState([0.5, 3.0]);
+  const [snowflakeSpeed, setSnowflakeSpeed] = useState([0.5, 3.0]);
 
   const location = useLocation();
   const navigate = useNavigate();

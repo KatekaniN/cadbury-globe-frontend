@@ -4,7 +4,7 @@ import Snowfall from "react-snowfall";
 import "./Logo.css";
 
 export default function Logo() {
-  const [snowAmount] = useState(100);
+  const [snowAmount, setSnowAmount] = useState(100);
 
   return (
     <div>

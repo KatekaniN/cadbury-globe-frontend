@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Snowfall from "react-snowfall";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -6,21 +6,21 @@ import "./GiftFinder.css";
 
 
 const GiftFinder = () => {
-  const [snowflakeCount] = useState(100);
-  const [snowAmount] = useState(100);
+  const [snowflakeCount, setSnowflakeCount] = useState(100);
+  const [snowAmount, setSnowAmount] = useState(100);
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showGiftBox, setShowGiftBox] = useState(false);
   const [showGlobe, setShowGlobe] = useState(true);
-  const [snowflakeRadius] = useState([0.5, 3.0]);
-  const [snowflakeSpeed] = useState([0.5, 3.0]);
+  const [snowflakeRadius, setSnowflakeRadius] = useState([0.5, 3.0]);
+  const [snowflakeSpeed, setSnowflakeSpeed] = useState([0.5, 3.0]);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (currentStep > questions.length) {
       setShowGiftBox(true);
     }
-  }, [currentStep, questions.length]);
+  }, [currentStep]);
 
   const questions = [
     {
@@ -122,12 +122,12 @@ const GiftFinder = () => {
               <div className="scroll-content">
                 <h1>Almost there...</h1>
                 <p className="welcome-text">
-                  Now that we&#39;ve returned Joy to the Cadbury Festive Globe.✨
+                  Now that we've returned Joy to the Cadbury Festive Globe.✨
                   <br /> <br />
-                  We&#39;d like to help you share the Cadbury Joy with your loved
+                  We'd like to help you share the Cadbury Joy with your loved
                   ones. Let the enchanted spirits of enchanting chocolate guide
                   you to the perfect gift. <br /> <br />
-                  Answer a few magical questions, and we&#39;ll help you discover
+                  Answer a few magical questions, and we'll help you discover
                   the ideal treat to spread joy this festive season.
                 </p>
                 <button

@@ -5,13 +5,13 @@ import Snowglobe from "./snowglobe/Globe";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 const MagicReveal = lazy(() => import("./magic/MagicReveal"));
-const Letter = lazy(() => import("./letter/ClosedLetter"));
+const Letter = lazy(() => import("./letter/ClosedLetter")); 
 const SelfieUpload = lazy(() => import("./selfie-upload/SelfieUpload"));
 const ChocRecommendation = lazy(() => import("./recommendation/ChocRecommendation"));
 const GiftFinder = lazy(() => import("./gift-quiz/GiftFinder"));
 
 export default function App() {
-const [snowAmount] = useState(100);
+const [snowAmount, setSnowAmount] = useState(100);
 
 return (
   <Routes>
@@ -39,7 +39,7 @@ return (
           </div>
           <div className="stand-items">
             <Snowglobe />
-            <Suspense fallback={<div style={{height: 100}} />}> 
+            <Suspense fallback={<div style={{ height: 80 }} />}> 
               <Letter />
             </Suspense>
           </div>

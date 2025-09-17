@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-  "preview": "vite preview",
-  "server": "node server/index.js",
-  "dev:server": "nodemon server/index.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@google-cloud/vision": "^4.3.2",

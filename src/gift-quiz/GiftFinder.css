@@ -13,7 +13,6 @@
 @font-face {
   font-family: "DeerSnow";
   src: url("/fonts/DeerSnow.ttf") format("truetype");
-  font-display: swap;
 }
 
 html,
