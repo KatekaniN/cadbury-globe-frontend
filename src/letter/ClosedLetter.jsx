@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./ClosedLetter.css";

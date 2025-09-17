@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+import api from "../lib/apiClient";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Snowfall from "react-snowfall";
@@ -11,7 +11,7 @@ const MoodDetector = () => {
   const [detectedMood, setDetectedMood] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [snowAmount, setSnowAmount] = useState(100);
+  const [snowAmount] = useState(100);
   const [isRevealed, setIsRevealed] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
   const navigate = useNavigate();
@@ -46,15 +46,9 @@ const MoodDetector = () => {
     formData.append("selfie", selectedImage);
 
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/detect-mood`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await api.post(`/detect-mood`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       setDetectedMood(response.data.mood);
 
       setTimeout(() => {
@@ -88,6 +82,7 @@ const MoodDetector = () => {
           src="/bg1.png"
           className="snow-village-selfie"
           alt="Snow background"
+          loading="lazy"
         />
       </div>
 
@@ -111,6 +106,7 @@ const MoodDetector = () => {
               src={imagePreview}
               alt="Your photo"
               className={`globe-image-selfie ${isRevealed ? "revealing" : ""}`}
+              loading="lazy"
             />
           )}
           <div className="snow-globe-selfie">
@@ -122,7 +118,7 @@ const MoodDetector = () => {
               />
             </div>
           </div>
-          <img className="snow-globe-base" src="/globe.png" alt="" />
+          <img className="snow-globe-base" src="/globe.png" alt="Globe base" loading="lazy" />
           {detectedMood && <div className="mood-result">{detectedMood}</div>}
         </div>
       </div>
@@ -133,7 +129,7 @@ const MoodDetector = () => {
           <div className="upload-section-selfie">
             <input
               type="file"
-              accept="image/*"
+              accept="image/*;capture=camera"
               onChange={handleImageChange}
               className="file-input-selfie"
             />

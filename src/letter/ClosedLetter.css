@@ -11,11 +11,13 @@
 @font-face {
   font-family: "Comic";
   src: url("/fonts/comic.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "DeerSnow";
   src: url("/fonts/DeerSnow.ttf") format("truetype");
+  font-display: swap;
 }
 
 .container-letter {

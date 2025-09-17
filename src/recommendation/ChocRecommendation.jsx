@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Snowfall from "react-snowfall";
 import { motion } from "framer-motion";
 import "./ChocRecommendation.css";
@@ -12,10 +12,7 @@ import {
 } from "react-share";
 
 const ChocRecommendation = () => {
-  const [snowflakeCount, setSnowflakeCount] = useState(100);
-  const [snowAmount, setSnowAmount] = useState(100);
-  const [snowflakeRadius, setSnowflakeRadius] = useState([0.5, 3.0]);
-  const [snowflakeSpeed, setSnowflakeSpeed] = useState([0.5, 3.0]);
+  const [snowAmount] = useState(100);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -71,6 +68,7 @@ const ChocRecommendation = () => {
         src="/bg1.png"
         className="snow-village-recommendation"
         alt="Snow background"
+        loading="lazy"
       />
 
       <motion.div
@@ -83,6 +81,7 @@ const ChocRecommendation = () => {
           src={recommendation.image}
           alt={recommendation.recommendation}
           className="chocolate-image"
+          loading="lazy"
         />
         <h2>{recommendation.recommendation}</h2>
         <p>{recommendation.description}</p>

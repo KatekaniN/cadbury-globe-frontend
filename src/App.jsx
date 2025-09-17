@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import Snowfall from "react-snowfall";
 import Snowglobe from "./snowglobe/Globe";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import MagicReveal from "./magic/MagicReveal";
-import Letter from "./letter/ClosedLetter"; 
-import SelfieUpload from "./selfie-upload/SelfieUpload";
-import ChocRecommendation from "./recommendation/ChocRecommendation";
-import GiftFinder from "./gift-quiz/GiftFinder";
+const MagicReveal = lazy(() => import("./magic/MagicReveal"));
+const Letter = lazy(() => import("./letter/ClosedLetter"));
+const SelfieUpload = lazy(() => import("./selfie-upload/SelfieUpload"));
+const ChocRecommendation = lazy(() => import("./recommendation/ChocRecommendation"));
+const GiftFinder = lazy(() => import("./gift-quiz/GiftFinder"));
 
 export default function App() {
-const [snowAmount, setSnowAmount] = useState(100);
+const [snowAmount] = useState(100);
 
 return (
   <Routes>
@@ -34,19 +34,38 @@ return (
               src="/bg1.png"
               className="snow-village"
               alt="Snow background"
+              loading="lazy"
             />
           </div>
           <div className="stand-items">
             <Snowglobe />
-            <Letter /> 
+            <Suspense fallback={<div style={{height: 100}} />}> 
+              <Letter />
+            </Suspense>
           </div>
         </div>
       }
     />
-    <Route path="/magic-reveal" element={<MagicReveal />} />
-    <Route path="/selfie-upload" element={<SelfieUpload />} />
-    <Route path="/gift-quiz" element={<GiftFinder />} />
-    <Route path="/choc-recommendation" element={<ChocRecommendation />} />
+    <Route path="/magic-reveal" element={
+      <Suspense fallback={<div className="page-fallback" />}> 
+        <MagicReveal />
+      </Suspense>
+    } />
+    <Route path="/selfie-upload" element={
+      <Suspense fallback={<div className="page-fallback" />}> 
+        <SelfieUpload />
+      </Suspense>
+    } />
+    <Route path="/gift-quiz" element={
+      <Suspense fallback={<div className="page-fallback" />}> 
+        <GiftFinder />
+      </Suspense>
+    } />
+    <Route path="/choc-recommendation" element={
+      <Suspense fallback={<div className="page-fallback" />}> 
+        <ChocRecommendation />
+      </Suspense>
+    } />
   </Routes>
 );
 }
