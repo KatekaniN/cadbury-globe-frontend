@@ -94,7 +94,6 @@ const GiftFinder = () => {
             src="/bg1.png"
             className="snow-village-gift"
             alt="Snow background"
-            loading="lazy"
           />
         </div>
       </div>
@@ -103,7 +102,7 @@ const GiftFinder = () => {
         {showGlobe && (
           <div className="globe-container-gift">
             <div className="globe-gift">
-              <img src="/snowman.png" alt="Snowman decoration" className="snowman" loading="lazy" />
+              <img src="/snowman.png" alt="" className="snowman" />
               <div className="snow-container">
                 <Snowfall
                   color="white"
@@ -113,7 +112,7 @@ const GiftFinder = () => {
                 />
               </div>
             </div>
-            <img className="globe-base-gift" src="/globe.png" alt="Globe base" loading="lazy" />
+            <img className="globe-base-gift" src="/globe.png" alt="" />
           </div>
         )}
         {currentStep === 0 && (
@@ -177,7 +176,7 @@ const GiftFinder = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img src="/gift1.png" alt="Gold and purple gift box" loading="lazy" />
+                  <img src="/gift1.png" alt="Gold and purple gift box" />
                 </motion.div>
               )}
               <div className="scroll-wrapper-reveal">

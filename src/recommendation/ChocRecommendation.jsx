@@ -71,7 +71,6 @@ const ChocRecommendation = () => {
         src="/bg1.png"
         className="snow-village-recommendation"
         alt="Snow background"
-        loading="lazy"
       />
 
       <motion.div
@@ -84,7 +83,6 @@ const ChocRecommendation = () => {
           src={recommendation.image}
           alt={recommendation.recommendation}
           className="chocolate-image"
-          loading="lazy"
         />
         <h2>{recommendation.recommendation}</h2>
         <p>{recommendation.description}</p>

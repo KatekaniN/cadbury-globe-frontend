@@ -11,6 +11,7 @@ const Globe = () => {
     <div className="globe-container">
       {/* Glass Globe */}
       <div className="globe">
+        <img src="" alt="" />
         {/* Snow Effect */}
         <div className="snow-container">
           <Snowfall
@@ -22,7 +23,7 @@ const Globe = () => {
           />
         </div>
       </div>
-  <img className="globeBase" src="/globe.png" alt="Globe base" loading="lazy" />
+      <img className="globeBase" src="/globe.png" alt="" />
     </div>
   );
 };

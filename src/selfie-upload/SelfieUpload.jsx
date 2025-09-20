@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -15,49 +15,6 @@ const MoodDetector = () => {
   const [isRevealed, setIsRevealed] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
   const navigate = useNavigate();
-  const abortRef = useRef(null);
-
-  useEffect(() => {
-    document.title = "Selfie Mood • Cadbury Festive Globe";
-    const media = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (media && media.matches) {
-      setSnowAmount(20);
-    }
-    return () => {
-      if (abortRef.current) abortRef.current.abort();
-    };
-  }, []);
-
-  const compressImage = async (file, maxDim = 1280, quality = 0.8) => {
-    try {
-      const img = document.createElement('img');
-      img.decoding = 'async';
-      const dataUrl = await new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-      await new Promise((res, rej) => {
-        img.onload = () => res();
-        img.onerror = rej;
-        img.src = dataUrl;
-      });
-      const { width, height } = img;
-      const scale = Math.min(1, maxDim / Math.max(width, height));
-      const targetW = Math.round(width * scale);
-      const targetH = Math.round(height * scale);
-      const canvas = document.createElement('canvas');
-      canvas.width = targetW;
-      canvas.height = targetH;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0, targetW, targetH);
-      const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
-      return new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), { type: 'image/jpeg' });
-    } catch {
-      return file; // fallback to original
-    }
-  };
 
   const getRiddleText = () => {
     if (!detectedMood) {
@@ -85,22 +42,17 @@ const MoodDetector = () => {
     setError(null);
     setIsShaking(true);
 
-  const compressed = await compressImage(selectedImage);
-  const formData = new FormData();
-  formData.append("selfie", compressed);
+    const formData = new FormData();
+    formData.append("selfie", selectedImage);
 
     try {
-    const controller = new AbortController();
-    abortRef.current = controller;
-    const response = await axios.post(
+      const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/detect-mood`,
         formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          timeout: 10000,
-      signal: controller.signal,
         }
       );
       setDetectedMood(response.data.mood);
@@ -136,7 +88,6 @@ const MoodDetector = () => {
           src="/bg1.png"
           className="snow-village-selfie"
           alt="Snow background"
-          loading="lazy"
         />
       </div>
 
@@ -171,7 +122,7 @@ const MoodDetector = () => {
               />
             </div>
           </div>
-          <img className="snow-globe-base" src="/globe.png" alt="Globe base" loading="lazy" />
+          <img className="snow-globe-base" src="/globe.png" alt="" />
           {detectedMood && <div className="mood-result">{detectedMood}</div>}
         </div>
       </div>
@@ -183,7 +134,6 @@ const MoodDetector = () => {
             <input
               type="file"
               accept="image/*"
-              capture="environment"
               onChange={handleImageChange}
               className="file-input-selfie"
             />
